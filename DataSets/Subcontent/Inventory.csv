@@ -1,0 +1,47 @@
+Item_ID,Item_name,Price,Category_name,Subcategory_name
+1,Egg ,$2.59 ,1,NULL
+2,Grilled Cheese,$2.69 ,1,NULL
+3,Cheese Biscuit,$2.24 ,1,NULL
+4,Cheese Biscuit (Two),$4.05 ,1,NULL
+5,Sausage Dog,$2.95 ,1,NULL
+6,Sausage,$3.00 ,1,NULL
+7,Sausage & Egg,$3.50 ,1,NULL
+8,Bacon,$3.00 ,1,NULL
+9,Bacon & Egg ,$3.50 ,1,NULL
+10,Country Ham,$3.30 ,1,NULL
+11,Country Ham & Egg,$3.80 ,1,NULL
+12,Tenderloin ,$3.85 ,1,NULL
+13,Tenderloin & Egg,$4.35 ,1,NULL
+14,Bologna,$2.99 ,1,NULL
+15,Steak,$5.95 ,1,NULL
+16,Stake & Egg,$6.65 ,1,NULL
+17,Pork Chop,$4.50 ,1,NULL
+18,Hot Dog,$6.78 ,2,1
+19,Cheeseburger,$7.29 ,2,1
+20,Chicken Fillet,$6.95 ,2,1
+21,1/2 Lb. Cheeseburger,$9.09 ,2,1
+22,Grilled Chicken,$6.99 ,2,1
+23,3 Chicken Strips,$7.09 ,2,1
+24,Chicken Cheese Steak,$9.95 ,2,1
+25,Beef Cheese Steak,$9.95 ,2,1
+26,Toast,$1.45 ,3,NULL
+27,Grits,$1.90 ,3,NULL
+28,Eggs (2) ,$2.29 ,3,NULL
+29,Bacon (3 Strips) ,$2.49 ,3,NULL
+30,Sausage ,$2.49 ,3,NULL
+31,Country Ham ,$2.59 ,3,NULL
+32,Home Fries ,$2.49 ,3,NULL
+33,French Fries ,$2.49 ,3,NULL
+34,Slaw,$2.49 ,3,NULL
+35,Fried Okra,$2.49 ,3,NULL
+36,Onion Rings,$3.19 ,3,NULL
+37,Sweet Potato Fries,$3.19 ,3,NULL
+38,Corn Nuggets ,$3.14 ,3,NULL
+39,w/chili ,$3.70 ,3,NULL
+40,Pepsie,$2.00 ,4,NULL
+41,Starmist,$2.00 ,4,NULL
+42,MT Dew,$2.00 ,4,NULL
+43,Diet,$2.00 ,4,NULL
+44,Tea,$2.00 ,4,2
+45,Coffee,$1.00 ,4,2
+46,Milk,$2.50 ,4,NULL
