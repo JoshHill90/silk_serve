@@ -5,8 +5,6 @@ from functools import partial
 import datetime
 from tkcalendar import *
 
-
-
 # ---------------------------------------------------------------------------------------------------------------- #
 # color and them variables
 # ---------------------------------------------------------------------------------------------------------------- #
@@ -50,14 +48,14 @@ class DateSelector(ctk.CTkToplevel):
         frame_for_cal.pack(padx=20, pady=20)
 
         self.cal = Calendar(self, selectmode='day',
-                       year=2020, month=5,
-                       day=22)
+                            year=2020, month=5,
+                            day=22)
 
         self.cal.pack(pady=20)
         _date = todays_date()
         Calendar.selection_set(self.cal, _date)
         cal_button = ctk.CTkButton(frame_for_cal, text="Get Date",
-               command=lambda: self.get_selected_date())
+                                   command=lambda: self.get_selected_date())
         cal_button.pack(padx=10, pady=10)
         self.send_date = None
         self.grab_set()
@@ -66,6 +64,7 @@ class DateSelector(ctk.CTkToplevel):
 
     def get_selected_date(self):
         self.send_date = self.cal.get_date()
+        print('get date', self.send_date)
         self.destroy()
 
 
@@ -73,6 +72,8 @@ class DateSelector(ctk.CTkToplevel):
 class SilkFlow(ctk.CTk):
     def __init__(self):
         super().__init__()
+        self.date_val = ctk.StringVar()
+        self.number_val = ctk.StringVar()
         self.date_box = None
         self.from_calendar = None
         self.search_scope = None
@@ -375,9 +376,8 @@ class SilkFlow(ctk.CTk):
         if self.search_scope is None:
             search_option_var = ctk.StringVar(value="Order Number")
             self.search_scope = 'Order Number'
-            number_val = tk.StringVar()
             self.search_box = ctk.CTkEntry(self.section2_frame, placeholder_text='Search by Order Number',
-                                           textvariable=number_val)
+                                           textvariable=self.number_val)
             self.search_box.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
             search_button = ctk.CTkButton(self.section2_frame, fg_color=_color_light, text='Search',
                                           font=self._reg_font,
@@ -401,10 +401,10 @@ class SilkFlow(ctk.CTk):
                                                  command=partial(self.select_calendar_date))
             date_selector_button.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
 
-            date_val = ctk.StringVar()
+
 
             self.date_box = ctk.CTkEntry(self.section2_frame,
-                                         textvariable=date_val, state='disabled')
+                                         textvariable=self.date_val)
             self.date_box.grid(row=1, column=1, padx=10, pady=10, sticky='nsew')
 
 
@@ -414,9 +414,9 @@ class SilkFlow(ctk.CTk):
                                               command=self.search_callback,
                                               variable=search_option_var)
             search_option.grid(row=0, column=1, padx=10, pady=10)
-            number_val = ctk.StringVar()
+
             self.search_box = ctk.CTkEntry(self.section2_frame, placeholder_text='Search by Order Number',
-                                           textvariable=number_val)
+                                           textvariable=self.number_val)
             self.search_box.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
             search_button = ctk.CTkButton(self.section2_frame, fg_color=_color_light, text='Search',
                                           font=self._reg_font,
@@ -434,10 +434,11 @@ class SilkFlow(ctk.CTk):
             search_date = todays_date()
         else:
             pass
-        self.date_box.delete('end')
-        self.date_box.configure(state='normal')
-        self.date_box.insert(0, search_date)
-        self.date_box.configure(state='disabled')
+
+        self.date_val.set(search_date)
+        search_ = self.date_box.get()
+        print(search_, 'returning')
+
 
     #emp6
 
@@ -449,6 +450,7 @@ class SilkFlow(ctk.CTk):
 
         elif search_type == 'Date':
             get_filter_date = self.date_box.get()
+            print('this get', type(get_filter_date))
             filter_by_date = []
             for dates_selected in orders:
                 date_of_orders = dates_selected[5]
@@ -458,13 +460,13 @@ class SilkFlow(ctk.CTk):
                 from_day = int(date_of_orders[15:17])
                 day_in = str(from_day)
                 date_check = month_in + '/' + day_in + '/' + year_in
+                print(date_check, '$$1', get_filter_date, "$$2")
                 if get_filter_date == date_check:
                     filter_by_date.append(dates_selected)
             return filter_by_date
 
         elif search_type == 'Order Number':
-            get_filter_number = self.search_box.get()
-            search = int(get_filter_number)
+            search = int(self.search_box.get())
             filtered_by_number = []
             for order in orders:
                 if order[1] == search:
