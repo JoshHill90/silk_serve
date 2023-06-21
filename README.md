@@ -1,1 +1,6 @@
-# silk_serve
+Silk_Serve
+Silk_Serve is an open-source Point of Sale (POS) system designed specifically for small retailers. This system provides a functional and efficient POS solution that encompasses inventory management, employee management, and order processing. Within this repository, you will find two main applications: Silk_Serve and Silk_Flow. Silk_Serve serves as the primary POS application, while Silk_Flow is a standalone application focused on inventory management, order processing, and employee management.
+
+Both applications are built using the tkinter library for the graphical user interface (GUI) and sqlite3 for efficient database management. The ultimate objective of this project is to develop a user-friendly and easily deployable system that can seamlessly integrate into a Django application. This integration would allow users to set up an online retail store or an online ordering system effortlessly.
+
+Please note that this project is still in progress, and the estimated completion date is set for September 2023. Feel free to explore the repository and provide feedback or suggestions. Contributions are also welcome. Together, we can create a robust and versatile POS solution for small retailers.
