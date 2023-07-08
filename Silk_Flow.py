@@ -29,7 +29,7 @@ date_time = 'DATE | ' + date + ' TIME | ' + time
 
 get_from = data_mg.GUIObjectList()
 orders, items_in_orders = get_from.logged_tickets()
-
+ctk.set_default_color_theme('Themes/delta4.txt')
 
 def todays_date():
     date_of_orders = str(date_time)
@@ -44,7 +44,7 @@ def todays_date():
 class DateSelector(ctk.CTkToplevel):
     def __init__(self):
         super().__init__()
-        frame_for_cal = ctk.CTkFrame(self, fg_color=_color_shadow)
+        frame_for_cal = ctk.CTkFrame(self, )
         frame_for_cal.pack(padx=20, pady=20)
 
         self.cal = Calendar(self, selectmode='day',
@@ -108,25 +108,25 @@ class SilkFlow(ctk.CTk):
         self._reg_font = ctk.CTkFont(family="Helvetica", size=16)
         self._total_font = ctk.CTkFont(family="Helvetica", size=34, weight="bold")
 
-        self.inventory_frame = ctk.CTkFrame(self, fg_color=_color_shadow)
+        self.inventory_frame = ctk.CTkFrame(self, )
         self.inventory_frame.pack(padx=10, pady=10)
 
-        self.section1_frame = ctk.CTkFrame(self.inventory_frame, fg_color=_color_dark, width=350)
+        self.section1_frame = ctk.CTkFrame(self.inventory_frame,  width=350)
         self.section1_frame.grid(row=0, column=0, rowspan=3, padx=10, pady=10, sticky='nsew')
 
-        self.section2_frame = ctk.CTkFrame(self.inventory_frame, fg_color=_color_dark, height=125)
+        self.section2_frame = ctk.CTkFrame(self.inventory_frame,  height=125)
         self.section2_frame.grid(row=0, column=1, columnspan=4, padx=10, pady=10, sticky='nsew')
 
-        self.window_view = ctk.CTkScrollableFrame(self.inventory_frame, fg_color=_color_dark, width=1070, height=750)
+        self.window_view = ctk.CTkScrollableFrame(self.inventory_frame,  width=1070, height=750)
         self.window_view.grid(row=1, column=1, rowspan=4, columnspan=4, padx=10, pady=10, sticky='nsew')
     #emp1
 
     def main_menu(self):
         print('emp1')
-        self.data_structure_frame = ctk.CTkFrame(self.section1_frame, fg_color=_color_med, width=315)
+        self.data_structure_frame = ctk.CTkFrame(self.section1_frame,  width=315)
         self.data_structure_frame.grid(row=0, column=0, padx=5, pady=5, sticky='nsew')
         self.data_view = ctk.CTkLabel(self.data_structure_frame,
-                                      fg_color=_color_light,
+                                      
                                       width=180,
                                       height=120,
                                       font=self._big_font,
@@ -135,7 +135,7 @@ class SilkFlow(ctk.CTk):
                                       )
         self.data_view.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
         self.inventory_button = ctk.CTkButton(self.data_structure_frame,
-                                              fg_color=_color_main,
+                                              
                                               width=180,
                                               height=65,
                                               text_color=_color_white,
@@ -144,7 +144,7 @@ class SilkFlow(ctk.CTk):
         self.inventory_button.grid(row=1, column=0, padx=10, pady=10, sticky='nsew')
 
         self.sales_button = ctk.CTkButton(self.data_structure_frame,
-                                          fg_color=_color_main,
+                                          
                                           width=180,
                                           height=65,
                                           text_color=_color_white,
@@ -155,7 +155,6 @@ class SilkFlow(ctk.CTk):
         self.sales_button.grid(row=2, column=0, padx=10, pady=10, sticky='nsew')
 
         self.hours_button = ctk.CTkButton(self.data_structure_frame,
-                                          fg_color=_color_main,
                                           width=180,
                                           height=65,
                                           text_color=_color_white,
@@ -163,7 +162,7 @@ class SilkFlow(ctk.CTk):
                                           font=self._med_font)
         self.hours_button.grid(row=4, column=0, padx=10, pady=10, sticky='nsew')
         self.stats_button = ctk.CTkButton(self.data_structure_frame,
-                                          fg_color=_color_main,
+                                          
                                           width=180,
                                           height=65,
                                           text_color=_color_white,
@@ -172,7 +171,7 @@ class SilkFlow(ctk.CTk):
         self.stats_button.grid(row=5, column=0, padx=10, pady=10, sticky='nsew')
 
         self.vendors_button = ctk.CTkButton(self.data_structure_frame,
-                                            fg_color=_color_main,
+                                            
                                             width=180,
                                             height=65,
                                             text_color=_color_white,
@@ -181,7 +180,7 @@ class SilkFlow(ctk.CTk):
         self.vendors_button.grid(row=6, column=0, padx=10, pady=10, sticky='nsew')
 
         self.employee_button = ctk.CTkButton(self.data_structure_frame,
-                                             fg_color=_color_main,
+                                             
                                              width=180,
                                              height=65,
                                              text_color=_color_white,
@@ -205,10 +204,10 @@ class SilkFlow(ctk.CTk):
 
     def sales_data(self):
         print('emp2')
-        self.data_structure_frame = ctk.CTkFrame(self.section1_frame, fg_color=_color_med, width=315)
+        self.data_structure_frame = ctk.CTkFrame(self.section1_frame,  width=315)
         self.data_structure_frame.grid(row=0, column=0, padx=5, pady=5, sticky='nsew')
         self.data_view = ctk.CTkLabel(self.data_structure_frame,
-                                      fg_color=_color_light,
+                                      
                                       width=180,
                                       height=120,
                                       font=self._big_font,
@@ -217,7 +216,7 @@ class SilkFlow(ctk.CTk):
                                       )
         self.data_view.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
         self.ticket_log_button = ctk.CTkButton(self.data_structure_frame,
-                                               fg_color=_color_main,
+                                               
                                                width=180,
                                                height=65,
                                                text_color=_color_white,
@@ -225,7 +224,7 @@ class SilkFlow(ctk.CTk):
                                                font=self._med_font)
         self.ticket_log_button.grid(row=1, column=0, padx=10, pady=10, sticky='nsew')
         self.ticket_log_button = ctk.CTkButton(self.data_structure_frame,
-                                               fg_color=_color_main,
+                                               
                                                width=180,
                                                height=65,
                                                text_color=_color_white,
@@ -238,12 +237,12 @@ class SilkFlow(ctk.CTk):
 
     def ticket_log_view(self, _ticket_list):
         print('emp3')
-        self.window_view = ctk.CTkScrollableFrame(self.inventory_frame, fg_color=_color_dark, width=1070, height=750)
+        self.window_view = ctk.CTkScrollableFrame(self.inventory_frame,  width=1070, height=750)
         self.window_view.grid(row=1, column=1, rowspan=4, columnspan=4, padx=10, pady=10, sticky='nsew')
-        self.current_view = ctk.CTkFrame(self.window_view, fg_color=_color_med, width=315)
+        self.current_view = ctk.CTkFrame(self.window_view,  width=315)
         self.current_view.grid(row=0, column=0, padx=5, pady=5)
         self.data_view = ctk.CTkLabel(self.current_view,
-                                      fg_color=_color_light,
+                                      
                                       width=180,
                                       height=120,
                                       font=self._big_font,
@@ -276,7 +275,6 @@ class SilkFlow(ctk.CTk):
             o_credit = '  Credit applied to order \n ' + to_credit
 
             self.order_frame = ctk.CTkFrame(self.current_view,
-                                             fg_color=_color_shadow,
                                              width=1050,
                                              height=144,
                                              )
@@ -284,7 +282,7 @@ class SilkFlow(ctk.CTk):
 
             # order details
             self.order_date = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -293,7 +291,7 @@ class SilkFlow(ctk.CTk):
             self.order_date.grid(row=0, column=0, columnspan=2, padx=3, pady=3, sticky='nsew')
 
             self.order_id = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -302,7 +300,7 @@ class SilkFlow(ctk.CTk):
             self.order_id.grid(row=1, column=0, padx=3, pady=3, sticky='nsew')
 
             self.order_number = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -311,7 +309,7 @@ class SilkFlow(ctk.CTk):
             self.order_number.grid(row=1, column=1, padx=3, pady=3, sticky='nsew')
 
             self.order_total = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -320,7 +318,7 @@ class SilkFlow(ctk.CTk):
             self.order_total.grid(row=0, column=2, padx=3, pady=3, sticky='nsew')
 
             self.order_tax = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -329,7 +327,7 @@ class SilkFlow(ctk.CTk):
             self.order_tax.grid(row=0, column=3, padx=3, pady=3, sticky='nsew')
 
             self.order_sub_total = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -338,7 +336,7 @@ class SilkFlow(ctk.CTk):
             self.order_sub_total.grid(row=0, column=4, padx=3, pady=3, sticky='nsew')
 
             self.order_discounts = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -347,7 +345,7 @@ class SilkFlow(ctk.CTk):
             self.order_discounts.grid(row=1, column=2, padx=3, pady=3, sticky='nsew')
 
             self.order_credit = ctk.CTkLabel(self.order_frame,
-                                              fg_color=_color_light,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -356,7 +354,7 @@ class SilkFlow(ctk.CTk):
             self.order_credit.grid(row=1, column=3, padx=3, pady=3, sticky='nsew')
 
             self.order_details = ctk.CTkButton(self.order_frame,
-                                             fg_color=_color_dark,
+                                             
                                              width=185, height=70,
                                              font=self._reg_font,
                                              text_color=_color_white,
@@ -371,7 +369,7 @@ class SilkFlow(ctk.CTk):
 
     def filter_and_search(self):
         print('emp4')
-        self.section2_frame = ctk.CTkFrame(self.inventory_frame, fg_color=_color_dark, height=125)
+        self.section2_frame = ctk.CTkFrame(self.inventory_frame,  height=125)
         self.section2_frame.grid(row=0, column=1, columnspan=4, padx=10, pady=10, sticky='nsew')
         if self.search_scope is None:
             search_option_var = ctk.StringVar(value="Order Number")
@@ -379,7 +377,7 @@ class SilkFlow(ctk.CTk):
             self.search_box = ctk.CTkEntry(self.section2_frame, placeholder_text='Search by Order Number',
                                            textvariable=self.number_val)
             self.search_box.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
-            search_button = ctk.CTkButton(self.section2_frame, fg_color=_color_light, text='Search',
+            search_button = ctk.CTkButton(self.section2_frame,  text='Search',
                                           font=self._reg_font,
                                           command=partial(self.sales_filter_refresh, self.search_scope))
             search_button.grid(row=1, column=0, padx=10, pady=10, sticky='nsew')
@@ -389,7 +387,7 @@ class SilkFlow(ctk.CTk):
             search_option.grid(row=0, column=1, padx=10, pady=10)
         elif self.search_scope == 'Date':
             search_option_var = ctk.StringVar(value="Date")
-            search_button = ctk.CTkButton(self.section2_frame, fg_color=_color_light, text='Search',
+            search_button = ctk.CTkButton(self.section2_frame,  text='Search',
                                           font=self._reg_font,
                                           command=partial(self.sales_filter_refresh, self.search_scope))
             search_button.grid(row=1, column=0, padx=10, pady=10, sticky='nsew')
@@ -418,7 +416,7 @@ class SilkFlow(ctk.CTk):
             self.search_box = ctk.CTkEntry(self.section2_frame, placeholder_text='Search by Order Number',
                                            textvariable=self.number_val)
             self.search_box.grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
-            search_button = ctk.CTkButton(self.section2_frame, fg_color=_color_light, text='Search',
+            search_button = ctk.CTkButton(self.section2_frame,  text='Search',
                                           font=self._reg_font,
                                           command=partial(self.sales_filter_refresh, self.search_scope))
             search_button.grid(row=1, column=0, padx=10, pady=10, sticky='nsew')
@@ -488,7 +486,7 @@ class SilkFlow(ctk.CTk):
     def items_on_ticket(self, order_number, items_in_list, order_ticket):
         print('emp8')
         self.window_view.destroy()
-        self.window_view = ctk.CTkScrollableFrame(self.inventory_frame, fg_color=_color_dark, width=1070, height=750)
+        self.window_view = ctk.CTkScrollableFrame(self.inventory_frame,  width=1070, height=750)
         self.window_view.grid(row=1, column=1, rowspan=4, columnspan=4, padx=10, pady=10, sticky='nsew')
         to_id = str(order_ticket[0])
         to_number = str(order_ticket[1])
@@ -509,11 +507,10 @@ class SilkFlow(ctk.CTk):
         iit_date = order_ticket[5]
         iit_discounts = 'Discount applied to order\n' + to_discounts
         iit_credit = 'Credit applied to order\n' + to_credit
-        self.current_view = ctk.CTkFrame(self.window_view, fg_color=_color_med, width=315)
+        self.current_view = ctk.CTkFrame(self.window_view,  width=315)
         self.current_view.grid(row=0, column=0, padx=5, pady=5, sticky='nsew')
 
         self.ticket_frame = ctk.CTkFrame(self.current_view,
-                                         fg_color=_color_shadow,
                                          width=1050,
                                          height=144,
                                          )
@@ -521,7 +518,7 @@ class SilkFlow(ctk.CTk):
 
         # order details
         self.item_date = ctk.CTkLabel(self.ticket_frame,
-                                      fg_color=_color_light,
+                                      
                                       width=185, height=70,
                                       font=self._reg_font,
                                       text_color=_color_white,
@@ -530,7 +527,7 @@ class SilkFlow(ctk.CTk):
         self.item_date.grid(row=0, column=0, columnspan=2, padx=3, pady=3, sticky='nsew')
 
         self.item_id = ctk.CTkLabel(self.ticket_frame,
-                                    fg_color=_color_light,
+                                    
                                     width=185, height=70,
                                     font=self._reg_font,
                                     text_color=_color_white,
@@ -539,7 +536,7 @@ class SilkFlow(ctk.CTk):
         self.item_id.grid(row=1, column=0, padx=3, pady=3, sticky='nsew')
 
         self.item_number = ctk.CTkLabel(self.ticket_frame,
-                                        fg_color=_color_light,
+                                        
                                         width=185, height=70,
                                         font=self._reg_font,
                                         text_color=_color_white,
@@ -548,7 +545,7 @@ class SilkFlow(ctk.CTk):
         self.item_number.grid(row=1, column=1, padx=3, pady=3, sticky='nsew')
 
         self.item_total = ctk.CTkLabel(self.ticket_frame,
-                                       fg_color=_color_light,
+                                       
                                        width=185, height=70,
                                        font=self._reg_font,
                                        text_color=_color_white,
@@ -557,7 +554,7 @@ class SilkFlow(ctk.CTk):
         self.item_total.grid(row=0, column=2, padx=3, pady=3, sticky='nsew')
 
         self.item_tax = ctk.CTkLabel(self.ticket_frame,
-                                     fg_color=_color_light,
+                                     
                                      width=185, height=70,
                                      font=self._reg_font,
                                      text_color=_color_white,
@@ -566,7 +563,7 @@ class SilkFlow(ctk.CTk):
         self.item_tax.grid(row=0, column=3, padx=3, pady=3, sticky='nsew')
 
         self.item_sub_total = ctk.CTkLabel(self.ticket_frame,
-                                           fg_color=_color_light,
+                                           
                                            width=185, height=70,
                                            font=self._reg_font,
                                            text_color=_color_white,
@@ -575,7 +572,7 @@ class SilkFlow(ctk.CTk):
         self.item_sub_total.grid(row=0, column=4, padx=3, pady=3, sticky='nsew')
 
         self.item_discounts = ctk.CTkLabel(self.ticket_frame,
-                                           fg_color=_color_light,
+                                           
                                            width=185, height=70,
                                            font=self._reg_font,
                                            text_color=_color_white,
@@ -584,7 +581,7 @@ class SilkFlow(ctk.CTk):
         self.item_discounts.grid(row=1, column=2, padx=3, pady=3, sticky='nsew')
 
         self.item_credit = ctk.CTkLabel(self.ticket_frame,
-                                        fg_color=_color_light,
+                                        
                                         width=185, height=70,
                                         font=self._reg_font,
                                         text_color=_color_white,
@@ -607,7 +604,6 @@ class SilkFlow(ctk.CTk):
                 item_discount = 'Item Discount\n' + str_item_discount
                 #item details
                 self.item_frame = ctk.CTkFrame(self.current_view,
-                                                 fg_color=_color_shadow,
                                                  width=1050,
                                                  height=144,
                                                  )
@@ -615,7 +611,7 @@ class SilkFlow(ctk.CTk):
 
                 # order details
                 self.iit_id_label = ctk.CTkLabel(self.item_frame,
-                                              fg_color=_color_dark,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -623,7 +619,7 @@ class SilkFlow(ctk.CTk):
                                               )
                 self.iit_id_label.grid(row=0, column=0, padx=3, pady=3, sticky='nsew')
                 self.iit_name_label = ctk.CTkLabel(self.item_frame,
-                                              fg_color=_color_main,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -631,7 +627,7 @@ class SilkFlow(ctk.CTk):
                                               )
                 self.iit_name_label.grid(row=0, column=1, padx=3, pady=3, sticky='nsew')
                 self.iit_cost_label = ctk.CTkLabel(self.item_frame,
-                                              fg_color=_color_dark,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -639,7 +635,7 @@ class SilkFlow(ctk.CTk):
                                               )
                 self.iit_cost_label.grid(row=0, column=2, padx=3, pady=3, sticky='nsew')
                 self.iit_tax_label = ctk.CTkLabel(self.item_frame,
-                                              fg_color=_color_main,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,
@@ -647,7 +643,7 @@ class SilkFlow(ctk.CTk):
                                               )
                 self.iit_tax_label.grid(row=0, column=3, padx=3, pady=3, sticky='nsew')
                 self.iit_discount_label = ctk.CTkLabel(self.item_frame,
-                                              fg_color=_color_dark,
+                                              
                                               width=185, height=70,
                                               font=self._reg_font,
                                               text_color=_color_white,

@@ -18,6 +18,8 @@ date_time = 'DATE | ' + date + ' TIME | ' + time
 _discounted_items_listed = []
 _order_listed = []
 _return_list = []
+
+ctk.set_default_color_theme('Themes/delta4.txt')
 # ---------------------------------------------------------------------------------------------------------------- #
 # window to for exceptions
 # ---------------------------------------------------------------------------------------------------------------- #
@@ -162,7 +164,7 @@ class ApplyCredit(ctk.CTkToplevel):
 
 class ApplyDiscount(ctk.CTkToplevel):
     global _discounted_items_listed
-    ctk.set_default_color_theme('Themes/delta4.txt')
+
 
     def __init__(self):
         super().__init__()
