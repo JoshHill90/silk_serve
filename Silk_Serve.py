@@ -747,12 +747,12 @@ class POSApp(ctk.CTk):
         window_total_shadow.grid(row=0, column=0, rowspan=3, padx=10, pady=10)
 
         #Frame for user window
-        self.user_window = ctk.CTkFrame(self.order_window)
-        self.user_window.grid(row=0, column=1, padx=10, pady=10, sticky='nsew')
+        #self.user_window = ctk.CTkFrame(self.order_window)
+        #self.user_window.grid(row=0, column=1, padx=10, pady=10, sticky='nsew')
 
         #Frame for menu items
         self.menu_tab_section = ctk.CTkFrame(self.order_window)
-        self.menu_tab_section.grid(row=1, column=1, padx=10, pady=10, sticky='nsew')
+        self.menu_tab_section.grid(row=0, column=1, rowspan=1, padx=10, pady=10, sticky='nsew')
         #Frame for order functions
         order_function_shadow = ctk.CTkFrame(self.order_window)
         order_function_shadow.grid(row=2, column=1, padx=10, pady=10, sticky='nsew')
@@ -764,7 +764,7 @@ class POSApp(ctk.CTk):
         self.order_number_handler()
         up_button_frame = ctk.CTkFrame(window_total_shadow, width=500)
         up_button_frame.grid(row=0, column=0, columnspan=3, padx=10, pady=10, st='nsew')
-        up_button = ctk.CTkButton(up_button_frame, command=partial(self.scroll_up))
+        up_button = ctk.CTkButton(up_button_frame, text="Up", font=self._reg_font, command=partial(self.scroll_up))
         up_button.pack()
 
 
@@ -1050,7 +1050,7 @@ class POSApp(ctk.CTk):
 
         down_button_frame = ctk.CTkFrame(window_total_shadow)
         down_button_frame.grid(row=5, column=0, columnspan=3, padx=10, pady=10, st='nsew')
-        down_button = ctk.CTkButton(down_button_frame, command=partial(self.scroll_down))
+        down_button = ctk.CTkButton(down_button_frame, text="Down", font=self._reg_font, command=partial(self.scroll_down))
         down_button.pack()
         # -------------------------------------------------------------------------------------------------------------#
         # Total display
@@ -1155,7 +1155,7 @@ class POSApp(ctk.CTk):
         # Frame for user options, logout, user status, user task,
         #--------------------------------------------------------------------------------------------------------------#
 
-        self.logout_butt = ctk.CTkButton(self.user_window,
+        """        self.logout_butt = ctk.CTkButton(self.user_window,
                                          text="Logout", font=self._med_font)
         self.logout_butt.grid(column=3, row=0, sticky='nsew', padx=7.5,  pady=7.5)
 
@@ -1194,7 +1194,7 @@ class POSApp(ctk.CTk):
                                               + 'User Status:  ' + self._user_info[2] + '\n'
                                               )
         self.user_window_label.grid(row=0, column=7, rowspan=2,  padx=10, pady=10, sticky='nsew')
-        self.update_current_order_window()
+        self.update_current_order_window()"""
         #--------------------------------------------------------------------------------------------------------------#
         # Menu Tabs
         #--------------------------------------------------------------------------------------------------------------#
