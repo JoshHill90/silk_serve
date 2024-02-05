@@ -1,5 +1,3 @@
-
-
 def totaler(cost_of_items, discount, credit_amount):
     sub_total = 0.00
     ticket_total = 0.00
@@ -34,14 +32,9 @@ def totaler(cost_of_items, discount, credit_amount):
             ticket_total, ticket_tax, sub_total = discount_order_with_credit(cost_of_items, discount, credit_amount)
             return ticket_total, ticket_tax, sub_total
 
-
-
-
-
 def taxer(cost_to_be_taxed):
     after_tax = cost_to_be_taxed * .07
     return after_tax
-
 
 def discount_order(cost_of_items_listed, discount_amount):
     ticket_total = 0.00
@@ -73,8 +66,6 @@ def discount_order_with_credit(cost_of_items_listed, discount_amount, credit_app
     ticket_discounted_tax = ticket_total * .07
     ticket_sub_discounted = ticket_discounted_tax + new_total_float
     return new_total_float, ticket_discounted_tax, ticket_sub_discounted
-
-
 
 def discount_item(cost_of_list_item, discount_to_apply):
     cost_of_as_float = float(cost_of_list_item)

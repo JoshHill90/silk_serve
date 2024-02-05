@@ -24,7 +24,6 @@ ctk.set_default_color_theme('Themes/delta4.txt')
 # window to for exceptions
 # ---------------------------------------------------------------------------------------------------------------- #
 
-
 class MenuGuide(ctk.CTkToplevel):
 
     def __init__(self):
@@ -43,11 +42,6 @@ class MenuGuide(ctk.CTkToplevel):
             theme_number +=1
         app = POSApp()
         app.refresher()
-
-
-
-
-
 
 # ---------------------------------------------------------------------------------------------------------------- #
 # window to for exceptions
